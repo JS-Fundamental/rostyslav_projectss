@@ -1,0 +1,66 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* This defines what 1rem is: 1rem = 10px */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 2.5rem;
+  color:white;
+  background-color:aliceblue;
+}
+
+.container {
+  height: 40rem;
+  width: 45rem;
+  background-color: #268b8d;
+  border-radius: 2rem;
+}
+
+.celsius {
+  padding-top: 8rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.fahrenheit {
+  padding-top: 7rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+input {
+  border-radius: 2rem;
+  width: 32rem;
+  height: 4rem;
+  font-size: 3rem;
+  padding: 2rem;
+  margin-left: 6rem;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
