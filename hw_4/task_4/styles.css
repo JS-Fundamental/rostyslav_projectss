@@ -24,3 +24,59 @@ body {
   background-color:aliceblue;
 }
 
+.container {
+  display: flex;
+  /* display: none; */
+  flex-direction: row;
+}
+
+.card {
+  background-color: bisque;
+  height: 30rem;
+  width: 35rem;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.resultCard {
+  background-color: beige;
+  height: 35rem;
+  width: 45rem;
+  border-radius: 2rem;
+}
+
+.question {
+  font-size: 2rem;
+  padding-top: 5rem;
+}
+
+#input {
+  font-size: 2rem;
+  display: block;
+  margin-top: 5rem;
+  padding: 0.5rem;
+  border-radius: 1.4rem;
+  width: 30rem;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn {
+  padding: 1rem 3rem;
+  margin-top: 13rem;
+  border-radius: 1rem;
+  background-color: #947a49;
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+.btn:hover {
+  background-color: #a78951;
+}
+
+.btn:active {
+  background-color: #a78951; 
+  box-shadow: 0 0.5rem #666;
+  transform: translateY(0.4rem);
+}

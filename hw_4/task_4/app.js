@@ -2,9 +2,9 @@
 */ 
 
 // Creating <div> with class container, & adding it to the DOM 
-const container = document.createElement('div');
-container.classList.add('container');
-document.body.append(container);
+// const container = document.createElement('div');
+// container.classList.add('container');
+// document.body.append(container);
 
 // Creating card with question
 
