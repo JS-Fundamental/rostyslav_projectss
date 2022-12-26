@@ -26,7 +26,6 @@ body {
 
 .container {
   display: flex;
-  /* display: none; */
   flex-direction: row;
 }
 
@@ -40,9 +39,16 @@ body {
 
 .resultCard {
   background-color: beige;
-  height: 35rem;
-  width: 45rem;
+  height: 30rem;
+  width: 50rem;
   border-radius: 2rem;
+  padding-top: 2.2em;
+  padding-left: 1rem;
+  list-style: none;
+}
+
+li {
+  padding: 1rem;
 }
 
 .question {

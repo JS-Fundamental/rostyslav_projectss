@@ -4,6 +4,3 @@ const questions = [
   'What is your occupation?',
   'Do you like pets?'
 ];
-
-const answers = [];
-// just for git test
