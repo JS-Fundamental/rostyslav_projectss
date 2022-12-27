@@ -14,11 +14,73 @@ body {
   font-family: 'Roboto', sans-serif;
   display: flex;
   align-items: center;
-  justify-content:space-between;
+  justify-content: center;
   height: 100vh;
   overflow: hidden;
   margin: 0;
   box-sizing: border-box;
-  font-size: 2.5rem;
   background-color:aliceblue;
 }
+
+.card {
+  height: 30rem;
+  width: 55rem;
+  margin: auto;
+  border-radius: 1.2rem;
+  box-shadow:  0rem 1rem 2rem;
+  background-color: #fff;
+  padding-top: 1.5rem;
+}
+
+h1 {
+  padding-top: 9rem;
+  text-align: center;
+  color: red;
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.7rem;
+  text-align: center;
+}
+
+.answers {
+  list-style: none;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  font-size: 2.2rem;
+}
+
+input {
+  cursor: pointer;
+}
+
+.btn {
+  margin-top: 3.5rem;
+  width: 100%;
+  height: 3.5rem;
+  cursor: pointer;
+  border-bottom-left-radius: 1.2rem;
+  border-bottom-right-radius: 1.2rem;
+  border: none;
+  background-color:#008271;
+  color: white;
+  font-size: 2rem;
+}
+
+.btn:hover {
+  background-color:  #01bba2;
+}
+
+.btn:active {
+  background-color: #01bba2; 
+  box-shadow: 0 0.5rem #666;
+  transform: translateY(0.4rem);
+}
+
+li {
+  padding: 0.8rem;
+}
+
+
+
