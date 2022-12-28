@@ -20,7 +20,25 @@ body {
   overflow: hidden;
   margin: 0;
   box-sizing: border-box;
-  font-size: 2rem;
+  font-size: 3rem;
   background-color:aliceblue;
 }
 
+a {
+  text-decoration: none;
+  padding: 3rem;
+  font-weight: 900;
+}
+
+.toggle {
+  display: block;
+}
+
+.accordion {
+  display: none;
+  width: 60rem;
+}
+
+.accordion.active {
+  display: block;
+}
