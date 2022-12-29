@@ -23,3 +23,41 @@ body {
   font-size: 3rem;
   background-color:aliceblue;
 }
+
+.greenBackground {
+  background-color: green;
+}
+
+.redBackground {
+  background-color: red;
+}
+
+input {
+  margin: 3rem 0rem;
+  padding: 0.5rem;
+  border-radius: 0.6rem;
+  font-size: 2rem;
+}
+
+.rightAnswer {
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.btn {
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  background-color: #ce9a2b;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.btn:hover {
+  background-color:  #d0a340;
+}
+
+.btn:active {
+  background-color: #d0a340; 
+  box-shadow: 0 0.5rem #666;
+  transform: translateY(0.4rem);
+}
