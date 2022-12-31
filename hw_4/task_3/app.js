@@ -18,15 +18,16 @@ buttonTag.addEventListener('click', () => {
 });
 
 inputTag.addEventListener('change', (event) => {
-  addClass(event);
+  countCorrectAnswers(event);
 });
 
 // Function to count correct answers
-const addClass = (event) => {
+const countCorrectAnswers = (event) => {
   if (event.target.value == correctAnswers[counter]) {
     correctAnswersCounter++;
-  }
-  return correctAnswersCounter; 
+  } 
+  setsScores.push(correctAnswersCounter);
+  return correctAnswersCounter;
 };
 
 // Create button for sets
@@ -41,24 +42,20 @@ const feedQuestion = () => {
 
   if (counter >= questions.length) {
     clearDom();
-    document.body.innerText = 
-      `Your score for set ${quizSetsCounter} is ${correctAnswersCounter}.`;
-      let bestScore = 0;
-      if (correctAnswersCounter > bestScore) {
-        bestScore = correctAnswersCounter;
-      }
-      counter = 0;
-      correctAnswersCounter = 0;
-      quizSetsCounter++;
-      bodyTag.append(buttonForSets);
-      
-      if (quizSetsCounter > 3) {
-        bodyTag.innerHTML = '';
-        const divBest = document.createElement('div');
-        divBest.classList.add('best-result');
-        divBest.append(`Your best score is: ${bestScore}`);
-        bodyTag.append(divBest);
-      }
+    document.body.innerText =
+      `Your score for set ${quizSetsCounter} is ${correctAnswersCounter} of ${questions.length}.`;
+    counter = 0;
+    correctAnswersCounter = 0;
+    quizSetsCounter++;
+    bodyTag.append(buttonForSets);
+
+    if (quizSetsCounter > 3) {
+      bodyTag.innerHTML = '';
+      const divBest = document.createElement('div');
+      divBest.classList.add('best-result');
+      divBest.append(`Your score for set ${quizSetsCounter - 1} is ${correctAnswersCounter} of ${questions.length}. Your best score is: ${Math.max(...setsScores)}`);
+      bodyTag.append(divBest);
+    }
   };
 };
 

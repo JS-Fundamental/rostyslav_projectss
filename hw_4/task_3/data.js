@@ -8,3 +8,4 @@ const questions = [
 
 const correctAnswers = [ '42', '63', '72', '56', '36' ];
 
+const setsScores = [];

@@ -24,10 +24,41 @@ body {
   background-color:aliceblue;
 }
 
-.container {
-  height: 40rem;
-  width: 33rem;
+.question {
+  padding: 1rem;
+}
+
+input {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  text-align: center;
+  color: red;
+  font-weight: 700;
+}
+
+.btn, .btn-sets {
+  padding: 0.7rem 3rem;
+  margin-top: 1rem;
   border-radius: 1rem;
-  background-color: bisque;
-  padding: 2rem;
+  background-color: #4CAF50;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.btn, .btn-sets:hover {
+  background-color:  #3e8e41;
+}
+
+.btn:active {
+  background-color: #3e8e41; 
+  box-shadow: 0 0.5rem #666;
+  transform: translateY(0.4rem);
+}
+
+.btn-sets:active {
+  background-color: #3e8e41; 
+  box-shadow: 0 0.5rem #666;
+  transform: translateY(0.4rem);
 }
