@@ -26,6 +26,8 @@ body {
 :root {
   --font-color: #fff;
   --main-bg-color: #000;
+  --correct-bg-color: #008000;
+  --wrong-bg-color: #ff0000;
 }
 
 .card {
@@ -87,6 +89,18 @@ li:active {
   font-size: 1.4rem;
 }
 
+.correct-answer {
+  background-color: var(--correct-bg-color);
+  pointer-events: none;
+
+  /* transition-duration: 1s;
+  transition-property: var(--correct-bg-color); */
+}
+
+.wrong-answer {
+  background-color: var(--wrong-bg-color);
+  pointer-events: none;
+}
 
 
 

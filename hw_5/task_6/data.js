@@ -1,5 +1,5 @@
 const questions = [
-  'What are made and repaired by a cobbler;',
+  'What are made and repaired by a cobbler?',
   'Which city will host the 2028 Olympic Games?',
   'What is the smallest country in the world?',
   'In what year was the first iPhone released?',
@@ -21,4 +21,6 @@ const correctAns = [
   '2007', 
   'White'];
 
-// 64 125 250 500 1 000
+  const money = ['64 000', '125 000', '250 000', '500 000', '1 000 000'];
+
+const letters = ['A. ', 'B. ', 'C. ', 'D. '];
