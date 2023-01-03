@@ -3,11 +3,15 @@
 */
 let questionCounter = 0;
 let correctAnswers = 0;
+let wrongAnswers = 0;
 const totalQuestions = questions.length;
 
-
-// Function to render DOM first time
+// Function to render DOM
 const renderDom = () => {
+  if (questionCounter > 4) {
+    return finalScreen();
+  }
+
   document.body.prepend(divCard);
   divMoney.append(`$${money[questionCounter]}`);
   divCard.append(divMoney);
@@ -16,11 +20,39 @@ const renderDom = () => {
   divCard.append(divAnswers);
   
   divAnswers.append(ulTag);
+
+
   ulTag.append(createList(questionCounter));
   divCard.append(divCounter);
+   
+  // Adding event listeners + correct/wrong answers logic
+  const items = [...document.querySelectorAll('li')];
+  items.forEach(item => {
+    item.addEventListener('click', (e) => {
+      if (e.target.lastChild.data == correctAns[questionCounter]) {
+        e.target.classList.add('correct-answer');
+        setTimeout(() => nextQuestion(e), 1000);
+        correctAnswers++;
+      } else {
+        wrongAnswers++;
+        e.target.classList.add('wrong-answer');
+        setTimeout(() => nextQuestion(e), 1000);
+      }
+    })
+  })
 }
 
-// Clear money, question, answers
+// Function for the next question
+const nextQuestion = (e) => {
+   
+  clearData();
+  divCounter.innerHTML = '';
+  divCounter.append(`${correctAnswers}/${totalQuestions}`);
+  questionCounter++;
+  renderDom();
+}
+
+// Function to clear previous question's DOM
 const clearData = () => {
   divCard.innerHTML = '';
   divMoney.innerHTML = '';
@@ -28,47 +60,24 @@ const clearData = () => {
   ulTag.innerHTML = '';
 }
 
-// Feed the next question
-// const nextQuestion = () => {
-//   clearData();
-//   renderDom();
-// };
+// Function to render final screen
+const finalScreen = () => {
+  divCard.innerHTML = '';
+  divCard.classList.add('final-screen');
+  if (wrongAnswers >= 3) {
+    divCard.innerText = 
+      `You gave ${wrongAnswers} wrong answers out of ${totalQuestions} questions.
+      You've lost the game.`;
+  }
 
-// function for the next question
-const nextQuestion = (e) => {
-  correctAnswers++;
-  divCounter.innerHTML = '';
-  divCounter.append(`${correctAnswers}/${totalQuestions}`);
-  e.target.classList.add('correct-answer');
-  setTimeout(() => e.target.classList.remove('correct-answer'), 1000);
-  setTimeout(() => {
-    clearData();
-    renderDom();
-  }, 1000);
-  questionCounter++;
-}
-
-
-// Question - answer logic
-const quesAnsHandler = () => {
-  const items = [...document.querySelectorAll('li')];
-  items.forEach(item => {
-    item.addEventListener('click', (e) => {
-      if (e.target.lastChild.data == correctAns[questionCounter]) {
-        nextQuestion(e);
-      } else if (e.target.lastChild.data !== correctAns[questionCounter]) {
-        divCounter.innerHTML = '';
-        divCounter.append(`${correctAnswers}/${totalQuestions}`);
-        e.target.classList.add('wrong-answer');
-        // nextQuestion();
-        // e.target.classList.remove('wrong-answer');
-      }
-    })
-  })
+  if (wrongAnswers < 3) {
+    divCard.innerText =
+    `You gave ${correctAnswers} correct answers out of ${totalQuestions} questions.
+    You are the winner!`;
+  }
 }
 
 // Start the game
 renderDom();
-quesAnsHandler();
 
 

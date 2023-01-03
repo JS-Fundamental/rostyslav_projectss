@@ -92,14 +92,20 @@ li:active {
 .correct-answer {
   background-color: var(--correct-bg-color);
   pointer-events: none;
-
-  /* transition-duration: 1s;
-  transition-property: var(--correct-bg-color); */
 }
 
 .wrong-answer {
   background-color: var(--wrong-bg-color);
   pointer-events: none;
+}
+
+.final-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: var(--font-color);
+  font-size: 2.4rem;
 }
 
 
