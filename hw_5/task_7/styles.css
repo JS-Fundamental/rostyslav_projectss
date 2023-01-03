@@ -24,3 +24,37 @@ body {
   background-color:aliceblue;
 }
 
+.big {
+  width: 60rem;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.small {
+  width: 20rem;
+  height: 12rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.prev, .next {
+  cursor: pointer;
+  color: #ff2222;
+  font-weight: bolder;
+  font-size: 3rem;
+  position: absolute;
+  margin-bottom: 15rem;
+}
+
+.prev {
+  left: 0;
+  margin-left: 28rem;
+}
+
+.next {
+  margin-right: 28rem;
+  right: 0;
+}
+
+
