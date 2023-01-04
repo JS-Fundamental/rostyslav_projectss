@@ -34,19 +34,37 @@ const toggleImage = (e) => {
   smallToBig(e);
 };
 
+// Buttons with event listeners
+nextBtn.addEventListener('click', () => {
+  nextImg();
+});
+
 prevBtn.addEventListener('click', (e) => {
-  let smallImage = divSmall;
-  console.log(smallImage); 
+  previousImg();
+});
 
-  // bigToSmall(e);
+// Function to see next image
+const nextImg = () => {
+  let bigImage = divBig.children[0];
+  bigImage.classList.remove('big');
+  bigImage.classList.add('small');
+  document.querySelector('.small-images').append(bigImage);
 
+  let smallImg = document.querySelector('.small-images').firstElementChild;
+  smallImg.classList.remove('small');
+  smallImg.classList.add('big');
+  divBig.prepend(smallImg);
+}
 
-  // e.target.classList.remove('small');
-  // e.target.classList.add('big');
-  // divBig.append(e.target);
-  // divBig.innerHTML = '';
-  // const image = document.querySelector('img');
-  // console.log(image);
-  // image.setAttribute('src', photoArr[1]);
-  // divBig.append(image);
-})
+// Function to see previous image
+const previousImg = () => {
+  let bigImage = divBig.children[0];
+  bigImage.classList.remove('big');
+  bigImage.classList.add('small');
+  document.querySelector('.small-images').prepend(bigImage);
+
+  let smallImg = document.querySelector('.small-images').lastElementChild;
+  smallImg.classList.remove('small');
+  smallImg.classList.add('big');
+  divBig.append(smallImg);
+} 
